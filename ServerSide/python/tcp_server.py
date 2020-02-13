@@ -28,3 +28,5 @@ class TcpServer:
         self.executor.submit(self.send_func, bytes(data.encode('utf-8')))
         print(bytes(self.executor.submit(self.send_func, bytes(data.encode('utf-8'))).result()).decode('utf-8'))
 
+    def close(self):
+        self.client_socket.close()
